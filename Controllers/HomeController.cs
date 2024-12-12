@@ -1,6 +1,6 @@
-using System.Diagnostics;
-using GentelmansProject.Models;
+﻿using GentelmansProject.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace GentelmansProject.Controllers
 {
