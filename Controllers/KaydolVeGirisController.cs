@@ -22,7 +22,15 @@ namespace GentelmansProject.Controllers
         {
             return View();
         }
-
+        public IActionResult Name(ApplicationUser kaydol)
+        {
+            if (context.Kullancis.Any(p => p.Email == kaydol.Email))
+            {
+                ViewData["Name"] = kaydol.FullName;
+                return View(kaydol);
+            }
+            return View();
+        }
         [HttpPost]
         [Route("hello")]
         public IActionResult KullanciOlustur(Kaydol kaydol)

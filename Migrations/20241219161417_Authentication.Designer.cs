@@ -3,6 +3,7 @@ using System;
 using GentelmansProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GentelmansProject.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241219161417_Authentication")]
+    partial class Authentication
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -245,24 +247,24 @@ namespace GentelmansProject.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "44136912-0aa0-491b-b1fc-3f8318be9675",
-                            ConcurrencyStamp = "d7746c15-f5de-4e68-9c84-f7e056341dba",
-                            Name = "ADMIN",
+                            Id = "71b9c230-ba11-4ea9-b74a-cf14fcaa1272",
+                            ConcurrencyStamp = "bd2e7a81-70c8-457b-b529-90e77e8eb3d5",
+                            Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "86b5372c-faf3-4ce4-ab5a-c5136f6b71c5",
-                            ConcurrencyStamp = "982cd3a8-b6fe-4c14-876e-8dc5ec7dc961",
-                            Name = "BERBER",
+                            Id = "60262b94-b633-4d38-a829-696a02c5a7d2",
+                            ConcurrencyStamp = "e945ae65-25c5-44b3-bc91-ab5fc56d4400",
+                            Name = "Berber",
                             NormalizedName = "BERBER"
                         },
                         new
                         {
-                            Id = "a0900ee2-9394-44e1-997e-d723d9dea017",
-                            ConcurrencyStamp = "a1c6ee4e-8a6c-4e78-a45f-dec2aec9ab4a",
-                            Name = "KULLANCI",
-                            NormalizedName = "KULLANCI"
+                            Id = "25c33e6b-ca2a-4b77-81ed-d9359c7c5fc9",
+                            ConcurrencyStamp = "c67070f0-3182-4810-9945-7fe91b623dea",
+                            Name = "Kullanci",
+                            NormalizedName = "kULLANCI"
                         });
                 });
 
