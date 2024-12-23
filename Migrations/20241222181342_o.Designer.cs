@@ -3,6 +3,7 @@ using System;
 using GentelmansProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GentelmansProject.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241222181342_o")]
+    partial class o
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -118,36 +120,26 @@ namespace GentelmansProject.Migrations
                     b.ToTable("Berbers");
                 });
 
-            modelBuilder.Entity("GentelmansProject.Models.kaydol", b =>
+            modelBuilder.Entity("GentelmansProject.Models.Kaydol", b =>
                 {
-                    b.Property<int>("BerberId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("BerberId"));
-
-                    b.Property<string>("Notlar")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("character varying(500)");
-
-                    b.Property<string>("RandevuSaati")
+                    b.Property<string>("ConfirmPassword")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("RandevuTarihi")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("ServisIds")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<decimal>("ToplamFiyat")
-                        .HasColumnType("numeric");
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    b.HasKey("BerberId");
+                    b.HasKey("Email");
 
-                    b.ToTable("Kaydols");
+                    b.ToTable("Kaydol");
                 });
 
             modelBuilder.Entity("GentelmansProject.Models.Randevular", b =>
@@ -273,22 +265,22 @@ namespace GentelmansProject.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c8f48989-3c55-4fb4-8e65-d1db55d9d2cf",
-                            ConcurrencyStamp = "feb04410-7335-4539-95b1-f95149bff378",
+                            Id = "8af8c752-6211-44d6-99aa-e022707c0dba",
+                            ConcurrencyStamp = "c8597aa4-e0c5-4e44-b64a-fcd8e69395ba",
                             Name = "ADMIN",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "d3b7364a-5d98-4139-8f88-37cda3cf1ee2",
-                            ConcurrencyStamp = "fd0f3f03-7b0b-4124-9c9e-e492da06ff3e",
+                            Id = "1c153877-4df9-458e-b080-753efd22357b",
+                            ConcurrencyStamp = "2285b8da-7417-4fbc-94b6-00bcd98785cc",
                             Name = "BERBER",
                             NormalizedName = "BERBER"
                         },
                         new
                         {
-                            Id = "d9697045-6352-44d6-bfaf-9d5002cc6908",
-                            ConcurrencyStamp = "6b335f24-47c9-4f67-8d11-e98e11362e82",
+                            Id = "5d62f40c-77fc-4a62-9f87-2108341073ba",
+                            ConcurrencyStamp = "070cf74d-fa51-4dc2-b77c-29381e4a8cfb",
                             Name = "KULLANCI",
                             NormalizedName = "KULLANCI"
                         });

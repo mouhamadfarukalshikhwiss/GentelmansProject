@@ -3,6 +3,7 @@ using System;
 using GentelmansProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GentelmansProject.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241222181805_y")]
+    partial class y
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -116,38 +118,6 @@ namespace GentelmansProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Berbers");
-                });
-
-            modelBuilder.Entity("GentelmansProject.Models.kaydol", b =>
-                {
-                    b.Property<int>("BerberId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("BerberId"));
-
-                    b.Property<string>("Notlar")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("character varying(500)");
-
-                    b.Property<string>("RandevuSaati")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("RandevuTarihi")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("ServisIds")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<decimal>("ToplamFiyat")
-                        .HasColumnType("numeric");
-
-                    b.HasKey("BerberId");
-
-                    b.ToTable("Kaydols");
                 });
 
             modelBuilder.Entity("GentelmansProject.Models.Randevular", b =>
@@ -273,22 +243,22 @@ namespace GentelmansProject.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c8f48989-3c55-4fb4-8e65-d1db55d9d2cf",
-                            ConcurrencyStamp = "feb04410-7335-4539-95b1-f95149bff378",
+                            Id = "57dd66fb-f496-4c82-8f23-87355d0c2df5",
+                            ConcurrencyStamp = "92f77871-6df9-42b6-b8f8-962a66f1da5b",
                             Name = "ADMIN",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "d3b7364a-5d98-4139-8f88-37cda3cf1ee2",
-                            ConcurrencyStamp = "fd0f3f03-7b0b-4124-9c9e-e492da06ff3e",
+                            Id = "e714fbaf-b38c-46b0-9dae-095c7e3ace8d",
+                            ConcurrencyStamp = "abb12cc7-98bd-48a4-b24e-e10000042386",
                             Name = "BERBER",
                             NormalizedName = "BERBER"
                         },
                         new
                         {
-                            Id = "d9697045-6352-44d6-bfaf-9d5002cc6908",
-                            ConcurrencyStamp = "6b335f24-47c9-4f67-8d11-e98e11362e82",
+                            Id = "7eb783f8-c564-4231-aa46-fc3330874409",
+                            ConcurrencyStamp = "777e23e8-b142-4e3c-8b7c-76c3c78a80ff",
                             Name = "KULLANCI",
                             NormalizedName = "KULLANCI"
                         });
